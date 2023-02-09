@@ -18,8 +18,8 @@ const FortuneStyle = ({ onStyleSelection }) => {
         <span onClick={() => handleStyleSelection("riddle")}>
           <Card front={""} backText={"Riddle"}/>
         </span>
-        <span onClick={() => handleStyleSelection("mystical")}>
-          <Card front={""} backText={"Mystical"}/>
+        <span onClick={() => handleStyleSelection("mystic")}>
+          <Card front={""} backText={"Mystic"}/>
         </span>
         <span onClick={() => handleStyleSelection("honest")}>
           <Card front={""} backText={"Dark"}/>

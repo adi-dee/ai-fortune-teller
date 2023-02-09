@@ -10,7 +10,7 @@ const FortuneType = ({ setFortuneType }) => {
   
   return (
     <div className='cards'>
-      <h2>Select a Fortune Type</h2>
+      <h2>Select a Fortune Topic</h2>
       <span onClick={() => handleSelection('love')}>
         <Card front={""} backText={"Love"}/>
       </span>

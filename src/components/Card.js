@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Card =  ({ front, backText }) => {
     return (
-    <div class="container hover"> 
+    <div class="container"> 
         <div className="card">  
 
         <div className="card_front">

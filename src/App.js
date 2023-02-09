@@ -50,6 +50,7 @@ import FortuneType from './components/FortuneType';
 import FortuneStyle from './components/FortuneStyle';
 import AuraColor from './components/AuraColor';
 import FortuneTeller from './components/FortuneTeller';
+import ResultCard from './components/ResultCard';
 import './App.css';
 
 const App = () => {
@@ -71,7 +72,7 @@ const App = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer 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',
+            Authorization: 'private-key',
           },
         }
       );
@@ -93,6 +94,15 @@ const App = () => {
       ) : (
         <FortuneTeller fortune={fortune} auraColor={auraColor} generateFortune={generateFortune} />
       )}
+
+
+        <div>
+          {!fortuneType ? null:( <ResultCard backText={fortuneType} /> ) }
+
+          {!fortuneStyle ? null:( <ResultCard backText={fortuneStyle} /> ) }
+
+          {!auraColor ? null:( <ResultCard backText={auraColor} /> ) }
+    </div>
     </div>
   );
 };
