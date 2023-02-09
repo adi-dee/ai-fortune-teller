@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Card from './Card';
 
 const FortuneStyle = ({ onStyleSelection }) => {
   const [selectedStyle, setSelectedStyle] = useState(null);
@@ -13,11 +14,19 @@ const FortuneStyle = ({ onStyleSelection }) => {
   return (
     <div>
       <h2>Select Fortune Style</h2>
-      <div>
-        <button onClick={() => handleStyleSelection("riddle")}>Riddle</button>
-        <button onClick={() => handleStyleSelection("mystical")}>Mystical</button>
-        <button onClick={() => handleStyleSelection("honest")}>Dark</button>
-        <button onClick={() => handleStyleSelection("inspiring")}>Inspiring</button>
+      <div className="cards">
+        <span onClick={() => handleStyleSelection("riddle")}>
+          <Card front={""} backText={"Riddle"}/>
+        </span>
+        <span onClick={() => handleStyleSelection("mystical")}>
+          <Card front={""} backText={"Mystical"}/>
+        </span>
+        <span onClick={() => handleStyleSelection("honest")}>
+          <Card front={""} backText={"Dark"}/>
+        </span>
+        <span onClick={() => handleStyleSelection("inspiring")}>
+          <Card front={""} backText={"Inspiring"}/>
+        </span>
       </div>
     </div>
   );

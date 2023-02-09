@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Card from './Card';
 
 const FortuneType = ({ setFortuneType }) => {
   const [selectedType, setSelectedType] = useState(null);
@@ -8,12 +9,20 @@ const FortuneType = ({ setFortuneType }) => {
   };
   
   return (
-    <div>
+    <div className='cards'>
       <h2>Select a Fortune Type</h2>
-      <button onClick={() => handleSelection('love')}>Love</button>
-      <button onClick={() => handleSelection('career')}>Career</button>
-      <button onClick={() => handleSelection('wealth')}>Wealth</button>
-      <button onClick={() => handleSelection('health')}>Health</button>
+      <span onClick={() => handleSelection('love')}>
+        <Card front={""} backText={"Love"}/>
+      </span>
+      <span onClick={() => handleSelection('career')}>
+        <Card front={""} backText={"Career"}/>
+      </span>
+      <span onClick={() => handleSelection('wealth')}>
+       <Card front={""} backText={"Wealth"}/>
+      </span>
+      <span onClick={() => handleSelection('health')}>
+        <Card front={""} backText={"Health"}/>
+      </span>
     </div>
   );
 };
