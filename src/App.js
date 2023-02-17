@@ -1,47 +1,3 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-
-// function App() {
-//   const [fortune, setFortune] = useState('');
-//   const [color, setColor] = useState('black');
-
-//   const generateFortune = async () => {
-//     try {
-//       const response = await axios.post(
-//         'https://api.openai.com/v1/completions',
-//         {
-//           model: 'text-davinci-003',
-//           prompt: 'Generate a fortune cookie sentence',
-//           temperature: 0,
-//           max_tokens: 7,
-//         },
-//         {
-//           headers: {
-//             'Content-Type': 'application/json',
-//             Authorization: 'Bearer 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',
-//           },
-//         }
-//       );
-//       const newFortune = response.data.choices[0].text;
-//       setFortune(newFortune);
-//       setColor(getRandomColor());
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   const getRandomColor = () => {
-//     const colors = ['red', 'blue', 'green', 'purple', 'orange'];
-//     return colors[Math.floor(Math.random() * colors.length)];
-//   };
-
-//   return (
-//     <div>
-//       <p style={{ color }}>{fortune}</p>
-//       <button onClick={generateFortune}>Get Fortune</button>
-//     </div>
-//   );
-// }
 
 // export default App;
 import React, { useState } from 'react';
@@ -65,14 +21,14 @@ const App = () => {
         'https://api.openai.com/v1/completions',
         {
           model: 'text-davinci-003',
-          prompt: `Generate a ${fortuneType} fortune in a ${fortuneStyle} concidering the aura meaning of the ${auraColor} color`,
+          prompt: `Generate a ${fortuneType} fortune in a ${fortuneStyle} considering the aura meaning of the ${auraColor} color`,
           temperature: 0,
           max_tokens: 300,
         },
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: 'private-key',
+            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
           },
         }
       );
